@@ -70,8 +70,8 @@ const Header = () => {
                 </button>
             </div>
 
-            <div id="mobile-menu" className={`lg:hidden fixed inset-0 bg-[#020010]/95 backdrop-blur-2xl transition-all duration-300 z-40 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
-                <div className="flex flex-col items-center justify-center h-full space-y-6">
+            <div id="mobile-menu" className={`lg:hidden fixed inset-0 bg-[#020010] transition-all duration-300 z-40 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+                <div className="flex flex-col items-center justify-start h-full pt-32 pb-10 space-y-6 overflow-y-auto">
                     <a href="#home" onClick={toggleMenu} className="text-2xl font-bold text-white hover:text-sky-400 transition-colors interactive-element">Home</a>
                     <a href="#about" onClick={toggleMenu} className="text-2xl font-bold text-white hover:text-sky-400 transition-colors interactive-element">About</a>
                     <a href="#journey" onClick={toggleMenu} className="text-2xl font-bold text-white hover:text-sky-400 transition-colors interactive-element">Journey</a>
