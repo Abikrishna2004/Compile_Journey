@@ -1,5 +1,6 @@
 import React from 'react';
 import { Code2, Cpu } from 'lucide-react';
+import portfolioPreview from '../images/portfolio_preview.png';
 
 const Portfolio = () => {
     return (
@@ -27,7 +28,7 @@ const Portfolio = () => {
 
                             <div className="scan-line"></div>
 
-                            <img src="/portfolio_preview.png"
+                            <img src={portfolioPreview}
                                 alt="Portfolio Preview"
                                 className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
 

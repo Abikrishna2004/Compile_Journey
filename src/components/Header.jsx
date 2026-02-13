@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import logo from '../images/logo.png';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,14 +12,14 @@ const Header = () => {
         <header id="header" className="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/5 backdrop-blur-xl">
             <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-sky-500/50 to-transparent opacity-50"></div>
             <a href="#home" className="bg-gradient-to-r from-slate-900/90 via-black/80 to-slate-900/90 text-center py-2.5 text-[10px] sm:text-xs font-medium text-sky-200/90 flex items-center justify-center gap-3 cursor-pointer interactive-element tracking-normal sm:tracking-widest uppercase border-b border-white/5 px-4 whitespace-normal leading-tight relative">
-                <img src="/logo.png" alt="icon" className="w-5 h-5 rounded-full shadow-[0_0_10px_rgba(56,189,248,0.5)] object-cover shrink-0" />
+                <img src={logo} alt="icon" className="w-5 h-5 rounded-full shadow-[0_0_10px_rgba(56,189,248,0.5)] object-cover shrink-0" />
                 <span className="min-w-0 break-words">Where Curiosity Compiles Creativity</span>
             </a>
             <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center relative">
                 <a href="#home" className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl font-bold tracking-wider interactive-element group min-w-0">
                     <div className="relative shrink-0">
                         <div className="absolute -inset-1 bg-gradient-to-r from-sky-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
-                        <img src="/logo.png" alt="logo" className="relative w-8 h-8 rounded-full border border-white/10 object-cover" />
+                        <img src={logo} alt="logo" className="relative w-8 h-8 rounded-full border border-white/10 object-cover" />
                     </div>
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400 truncate">Compile<span className="text-sky-400"> </span>JOURNEY</span>
                 </a>

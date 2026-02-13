@@ -7,6 +7,7 @@ import {
   Rocket,
   User,
 } from "lucide-react";
+import founderAbout from '../images/founder_about.jpg';
 
 const About = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -35,7 +36,7 @@ const About = () => {
                 <div className="absolute -inset-1 bg-gradient-to-br from-sky-500 to-purple-600 rounded-full blur opacity-40 group-hover:opacity-70 transition duration-500"></div>
                 <div className="relative w-40 h-40 rounded-full overflow-hidden border-2 border-white/20 p-1 bg-slate-900 shadow-2xl">
                   <img
-                    src={`${import.meta.env.BASE_URL}founder_about.jpg`}
+                    src={founderAbout}
                     alt="Abikrishna - Founder"
                     className="w-full h-full object-cover rounded-full transform transition-transform duration-700 group-hover:scale-110"
                   />

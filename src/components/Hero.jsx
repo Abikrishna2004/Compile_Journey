@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, BrainCircuit, Lightbulb, Type, Target, ArrowRight } from 'lucide-react';
+import logo from '../images/logo.png';
+import founder from '../images/founder.png';
 
 const Hero = () => {
     const [rotationIndex, setRotationIndex] = useState(0);
@@ -30,7 +32,7 @@ const Hero = () => {
                 <div className="absolute inset-0 w-[100vw] h-full flex flex-col items-center justify-center text-center backface-hidden pt-20 pb-12"
                     style={{ transform: `rotateY(0deg) translateZ(50vw)` }}>
                     <div className="max-w-4xl mx-auto px-4">
-                        <img src="/logo.png" alt="logo" className="w-24 h-24 md:w-32 md:h-32 rounded-full mb-4 mx-auto shadow-2xl shadow-sky-500/20 object-cover" />
+                        <img src={logo} alt="logo" className="w-24 h-24 md:w-32 md:h-32 rounded-full mb-4 mx-auto shadow-2xl shadow-sky-500/20 object-cover" />
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold hero-gradient-text mb-4 leading-tight">
                             Where Curiosity Compiles Creativity
                         </h1>
@@ -44,7 +46,7 @@ const Hero = () => {
                 <div className="absolute inset-0 w-[100vw] h-full flex flex-col items-center justify-center text-center backface-hidden pt-20 pb-12"
                     style={{ transform: `rotateY(90deg) translateZ(50vw)` }}>
                     <div className="max-w-4xl mx-auto px-4">
-                        <img src="/logo.png" alt="Avira" className="w-24 h-24 md:w-32 md:h-32 rounded-full mb-4 mx-auto shadow-2xl shadow-purple-500/20 object-cover" />
+                        <img src={logo} alt="Avira" className="w-24 h-24 md:w-32 md:h-32 rounded-full mb-4 mx-auto shadow-2xl shadow-purple-500/20 object-cover" />
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-purple-300 mb-4 leading-tight">Meet Avira — Your AI Assistant</h1>
                         <p className="text-sm sm:text-lg md:text-xl text-slate-300 mb-4 max-w-2xl mx-auto">
                             Avira helps you explore AI, generate smart solutions, and experiment with prompt engineering seamlessly.
@@ -65,7 +67,7 @@ const Hero = () => {
                 <div className="absolute inset-0 w-[100vw] h-full flex flex-col items-center justify-center text-center backface-hidden pt-20 pb-12"
                     style={{ transform: `rotateY(180deg) translateZ(50vw)` }}>
                     <div className="max-w-4xl mx-auto px-4">
-                        <img src="/founder.png" alt="Abikrishna" className="w-24 h-24 md:w-32 md:h-32 rounded-full mb-4 mx-auto border-2 border-sky-500 object-cover" />
+                        <img src={founder} alt="Abikrishna" className="w-24 h-24 md:w-32 md:h-32 rounded-full mb-4 mx-auto border-2 border-sky-500 object-cover" />
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-sky-300 mb-4 leading-tight">Hi, I’m Abikrishna</h1>
                         <p className="text-sm sm:text-lg md:text-xl text-slate-300 mb-6 max-w-2xl mx-auto">
                             I am a software developer and AI enthusiast, creating innovative tools and projects in LLMs, FastAPI, and Data Science.
