@@ -65,34 +65,41 @@ const Header = () => {
                     </a>
                 </nav>
 
-                <button onClick={toggleMenu} className="lg:hidden interactive-element text-white hover:text-sky-400 transition-colors relative z-50">
+                <button onClick={toggleMenu} className="lg:hidden interactive-element text-white hover:text-sky-400 transition-colors relative z-[110]">
                     {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>
             </div>
 
-            <div id="mobile-menu" className={`lg:hidden fixed inset-0 bg-[#020010] transition-all duration-300 z-40 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
-                <div className="flex flex-col items-center justify-start h-full pt-32 pb-10 space-y-6 overflow-y-auto">
-                    <a href="#home" onClick={toggleMenu} className="text-2xl font-bold text-white hover:text-sky-400 transition-colors interactive-element">Home</a>
-                    <a href="#about" onClick={toggleMenu} className="text-2xl font-bold text-white hover:text-sky-400 transition-colors interactive-element">About</a>
-                    <a href="#journey" onClick={toggleMenu} className="text-2xl font-bold text-white hover:text-sky-400 transition-colors interactive-element">Journey</a>
+            {/* Mobile Menu Backdrop */}
+            <div
+                className={`lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] transition-opacity duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
+                onClick={toggleMenu}
+            ></div>
+
+            {/* Mobile Menu Sidebar */}
+            <div id="mobile-menu" className={`lg:hidden fixed top-0 right-0 bottom-0 w-[75%] max-w-[300px] bg-[#020010] z-[100] shadow-2xl border-l border-white/10 transition-transform duration-300 ease-out transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                <div className="flex flex-col items-center justify-start h-full pt-28 pb-10 space-y-6 overflow-y-auto">
+                    <a href="#home" onClick={toggleMenu} className="text-xl font-bold text-white hover:text-sky-400 transition-colors interactive-element">Home</a>
+                    <a href="#about" onClick={toggleMenu} className="text-xl font-bold text-white hover:text-sky-400 transition-colors interactive-element">About</a>
+                    <a href="#journey" onClick={toggleMenu} className="text-xl font-bold text-white hover:text-sky-400 transition-colors interactive-element">Journey</a>
 
                     {/* Mobile Projects Menu */}
                     <div className="flex flex-col items-center w-full">
                         <button
                             onClick={() => setIsProjectsOpen(!isProjectsOpen)}
-                            className="text-2xl font-bold text-white hover:text-sky-400 transition-colors interactive-element flex items-center gap-2"
+                            className="text-xl font-bold text-white hover:text-sky-400 transition-colors interactive-element flex items-center gap-2"
                         >
                             Projects <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isProjectsOpen ? 'rotate-180' : ''}`} />
                         </button>
 
                         <div className={`overflow-hidden transition-all duration-300 flex flex-col items-center gap-4 ${isProjectsOpen ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                            <a href="#avira" onClick={toggleMenu} className="text-lg text-slate-300 hover:text-white transition-colors">Avira AI</a>
-                            <a href="#curiodata" onClick={toggleMenu} className="text-lg text-slate-300 hover:text-white transition-colors">CurioData</a>
+                            <a href="#avira" onClick={toggleMenu} className="text-base text-slate-300 hover:text-white transition-colors">Avira AI</a>
+                            <a href="#curiodata" onClick={toggleMenu} className="text-base text-slate-300 hover:text-white transition-colors">CurioData</a>
                         </div>
                     </div>
 
-                    <a href="#portfolio" onClick={toggleMenu} className="text-2xl font-bold text-white hover:text-sky-400 transition-colors interactive-element">Portfolio</a>
-                    <a href="#contact" onClick={toggleMenu} className="mt-8 px-8 py-3 bg-sky-500 text-white rounded-full font-bold text-lg hover:bg-sky-400 transition-colors interactive-element shadow-lg shadow-sky-500/20">Contact Me</a>
+                    <a href="#portfolio" onClick={toggleMenu} className="text-xl font-bold text-white hover:text-sky-400 transition-colors interactive-element">Portfolio</a>
+                    <a href="#contact" onClick={toggleMenu} className="mt-4 px-8 py-3 bg-sky-500 text-white rounded-full font-bold text-lg hover:bg-sky-400 transition-colors interactive-element shadow-lg shadow-sky-500/20">Contact Me</a>
                 </div>
             </div>
         </header>
