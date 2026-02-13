@@ -4,7 +4,7 @@ import portfolioPreview from '../images/portfolio_preview.png';
 
 const Portfolio = () => {
     return (
-        <section id="portfolio" className="py-32 relative overflow-hidden">
+        <section id="portfolio" className="py-16 md:py-32 relative overflow-hidden">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] max-w-full bg-sky-500/5 blur-[80px] rounded-full pointer-events-none"></div>
 
             <div className="container mx-auto px-6 text-center relative z-10">
@@ -13,7 +13,7 @@ const Portfolio = () => {
                     A curated collection of my projects, skills, and professional journey.
                 </p>
 
-                <div className="portfolio-orbit-wrapper relative max-w-3xl mx-auto perspective-container reveal" style={{ perspective: '1000px' }}>
+                <div className="portfolio-orbit-wrapper relative w-full max-w-3xl mx-auto perspective-container reveal" style={{ perspective: '1000px' }}>
 
                     <div className="orbit-ring ring-1">
                         <div className="orbit-icon icon-1 bg-[#0a0a0a] border border-sky-500/50 text-sky-400"><Code2 className="w-4 h-4" /></div>
@@ -30,11 +30,11 @@ const Portfolio = () => {
 
                             <img src={portfolioPreview}
                                 alt="Portfolio Preview"
-                                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+                                className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
 
                             <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center z-20 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
-                                <h3 className="text-3xl font-bold text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Explore My Work</h3>
-                                <p className="text-sky-300 mb-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 text-sm">Full Stack • AI • Data Science</p>
+                                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Explore My Work</h3>
+                                <p className="text-sky-300 mb-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 text-xs md:text-sm">Full Stack • AI • Data Science</p>
 
                                 <a href="https://creation-hub.abikrishna04edu.workers.dev/" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-white text-black text-sm font-bold rounded-full hover:bg-primary hover:text-white transition-colors interactive-element shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_40px_rgba(56,189,248,0.6)] transform scale-90 group-hover:scale-100 duration-300">
                                     Open Portfolio

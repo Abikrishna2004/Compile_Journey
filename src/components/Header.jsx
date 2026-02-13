@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Home, User, Map, FolderGit2, Briefcase, Mail, Cpu, Database } from 'lucide-react';
 import logo from '../images/logo.png';
 
 const Header = ({ isMenuOpen, setIsMenuOpen }) => {
@@ -16,29 +16,70 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
             ></div>
 
             {/* Mobile Menu Sidebar - Left Side */}
-            <div id="mobile-menu" className={`lg:hidden fixed top-0 left-0 bottom-0 w-64 bg-[#020010] z-[120] shadow-2xl border-r border-white/10 transition-transform duration-300 ease-out transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-                <div className="flex flex-col items-center justify-start h-full pt-20 pb-6 space-y-4 overflow-y-auto">
-                    <a href="#home" onClick={toggleMenu} className="text-lg font-medium text-white hover:text-sky-400 transition-colors interactive-element">Home</a>
-                    <a href="#about" onClick={toggleMenu} className="text-lg font-medium text-white hover:text-sky-400 transition-colors interactive-element">About</a>
-                    <a href="#journey" onClick={toggleMenu} className="text-lg font-medium text-white hover:text-sky-400 transition-colors interactive-element">Journey</a>
+            <div id="mobile-menu" className={`lg:hidden fixed top-0 left-0 bottom-0 w-72 bg-[#020010] z-[120] shadow-[10px_0_30px_-10px_rgba(0,0,0,0.5)] border-r border-white/10 transition-transform duration-300 ease-out transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+
+                {/* Sidebar Header */}
+                <div className="flex items-center justify-between px-6 pt-8 pb-6 border-b border-white/5">
+                    <div className="flex items-center gap-3">
+                        <img src={logo} alt="logo" className="w-8 h-8 rounded-full shadow-lg shadow-sky-500/20" />
+                        <span className="font-space font-bold text-white tracking-widest text-lg">JOURNEY</span>
+                    </div>
+                    <button onClick={toggleMenu} className="p-2 -mr-2 text-slate-400 hover:text-white transition-colors bg-white/5 rounded-full hover:bg-white/10">
+                        <X className="w-5 h-5" />
+                    </button>
+                </div>
+
+                {/* Sidebar Content */}
+                <div className="flex flex-col items-start px-4 py-6 space-y-2 overflow-y-auto h-[calc(100%-80px)]">
+                    <a href="#home" onClick={toggleMenu} className="w-full flex items-center gap-4 px-4 py-3 text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all interactive-element group">
+                        <Home className="w-5 h-5 text-sky-500 group-hover:scale-110 transition-transform" />
+                        <span className="font-medium">Home</span>
+                    </a>
+                    <a href="#about" onClick={toggleMenu} className="w-full flex items-center gap-4 px-4 py-3 text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all interactive-element group">
+                        <User className="w-5 h-5 text-purple-500 group-hover:scale-110 transition-transform" />
+                        <span className="font-medium">About</span>
+                    </a>
+                    <a href="#journey" onClick={toggleMenu} className="w-full flex items-center gap-4 px-4 py-3 text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all interactive-element group">
+                        <Map className="w-5 h-5 text-emerald-500 group-hover:scale-110 transition-transform" />
+                        <span className="font-medium">Journey</span>
+                    </a>
 
                     {/* Mobile Projects Menu */}
-                    <div className="flex flex-col items-center w-full">
+                    <div className="w-full">
                         <button
                             onClick={() => setIsProjectsOpen(!isProjectsOpen)}
-                            className="text-lg font-medium text-white hover:text-sky-400 transition-colors interactive-element flex items-center gap-2"
+                            className="w-full flex items-center justify-between px-4 py-3 text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all interactive-element group"
                         >
-                            Projects <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isProjectsOpen ? 'rotate-180' : ''}`} />
+                            <div className="flex items-center gap-4">
+                                <FolderGit2 className="w-5 h-5 text-amber-500 group-hover:scale-110 transition-transform" />
+                                <span className="font-medium">Projects</span>
+                            </div>
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isProjectsOpen ? 'rotate-180' : ''}`} />
                         </button>
 
-                        <div className={`overflow-hidden transition-all duration-300 flex flex-col items-center gap-3 ${isProjectsOpen ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-                            <a href="#avira" onClick={toggleMenu} className="text-sm text-slate-300 hover:text-white transition-colors">Avira AI</a>
-                            <a href="#curiodata" onClick={toggleMenu} className="text-sm text-slate-300 hover:text-white transition-colors">CurioData</a>
+                        <div className={`overflow-hidden transition-all duration-300 flex flex-col gap-1 pl-12 pr-2 ${isProjectsOpen ? 'max-h-40 opacity-100 mt-1 mb-2' : 'max-h-0 opacity-0'}`}>
+                            <a href="#avira" onClick={toggleMenu} className="flex items-center gap-3 py-2 text-sm text-slate-400 hover:text-white transition-colors">
+                                <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                                Avira AI
+                            </a>
+                            <a href="#curiodata" onClick={toggleMenu} className="flex items-center gap-3 py-2 text-sm text-slate-400 hover:text-white transition-colors">
+                                <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                                CurioData
+                            </a>
                         </div>
                     </div>
 
-                    <a href="#portfolio" onClick={toggleMenu} className="text-lg font-medium text-white hover:text-sky-400 transition-colors interactive-element">Portfolio</a>
-                    <a href="#contact" onClick={toggleMenu} className="mt-2 px-6 py-2 bg-sky-500 text-white rounded-full font-bold text-sm hover:bg-sky-400 transition-colors interactive-element shadow-lg shadow-sky-500/20">Contact Me</a>
+                    <a href="#portfolio" onClick={toggleMenu} className="w-full flex items-center gap-4 px-4 py-3 text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all interactive-element group">
+                        <Briefcase className="w-5 h-5 text-pink-500 group-hover:scale-110 transition-transform" />
+                        <span className="font-medium">Portfolio</span>
+                    </a>
+
+                    <div className="flex-1 w-full flex items-end justify-center pb-8 pt-4">
+                        <a href="#contact" onClick={toggleMenu} className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-sky-600 to-blue-700 text-white rounded-xl font-bold text-sm shadow-lg shadow-sky-500/20 active:scale-95 transition-all interactive-element">
+                            <Mail className="w-4 h-4" />
+                            <span>Contact Me</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
