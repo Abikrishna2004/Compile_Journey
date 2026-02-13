@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -13,6 +13,8 @@ import Cursor from './components/Cursor';
 import './index.css';
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal');
     const revealOnScroll = () => {
@@ -36,19 +38,21 @@ function App() {
       <BackgroundCanvas />
       <Cursor />
 
-      <Header />
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
-      <main className="relative z-10">
-        <Hero />
-        <About />
-        <Journey />
-        <Projects />
-        <Portfolio />
-        <FAQ />
-        <Contact />
-      </main>
+      <div className={`transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-64' : ''}`}>
+        <main className="relative z-10">
+          <Hero />
+          <About />
+          <Journey />
+          <Projects />
+          <Portfolio />
+          <FAQ />
+          <Contact />
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 }
